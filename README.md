@@ -35,10 +35,10 @@ PharmaGuard is a web application designed to analyze drug-drug interactions and 
    ```
 
 4. **Data & Model Files:**
-   Place the required dataset and model pickle files in the project root:
-   - `pharmaguard_functions.pkl`
-   - `pharmaguard_df.pkl`
-   *(Note: Large binary pickle files are excluded from git history due to GitHub file size limits).*
+   Due to GitHub's file size limits, the large dataset and model files are hosted on Google Drive:
+   - 🔗 **[Download Model & Data Files (Google Drive)](https://drive.google.com/drive/folders/14UFHRAOnEUPB79WdDU8JvJuUFkYLwUha)**
+
+   Download `pharmaguard_functions.pkl` from the link above and place it in the project root directory before running the application.
 
 5. **Run the Application:**
    ```bash
