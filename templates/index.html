@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PharmaGuard | Visualize</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://t4.ftcdn.net/jpg/10/27/40/71/360_F_1027407115_f9OsOMcgehl82FKwpNCgCBROJqmDyX3M.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    .overlay {
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5); /* dark overlay */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* background-color: rgba(34, 34, 34, 0.9); */
+      padding: 15px 30px;
+      color: white;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
+      margin-right: 10px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      color: white;
+      margin: 0;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      border-bottom: 2px solid white;
+    }
+
+    .form-box {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    .form-box h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .form-box label {
+      display: block;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    .form-box input, .form-box select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-box button {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+
+    .form-box button:hover {
+      background-color: #0097a7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔳 Dark Overlay -->
+  <div class="overlay"></div>
+
+  <!-- 🔲 Content Layer -->
+  <div class="content">
+
+    <!-- 🔝 Navigation Bar -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="https://media.istockphoto.com/id/1077130198/vector/cross-or-plus-with-letter-o-logo-icon-design.jpg?s=612x612&w=0&k=20&c=7zl7Fddbrh3s9t697b7wYcJTtgGOyHAY--uE8yxjHdc=" alt="Logo">
+        <h1>PharmaGuard</h1>
+      </div>
+      <div class="nav-links">
+    <a href="{{ url_for('intro') }}">Home</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('index') }}">Visualize</a>
+    <a href="{{ url_for('visualize') }}">Drug Bookmarks</a>
+    <a href="#faq">FAQ</a>
+</div>
+
+    </div>
+
+    <!-- 🧪 Interaction Form -->
+    <div class="form-box">
+      <h2>Check Drug Interaction</h2>
+      <form action="/result" method="POST">
+        <label for="drug_a">Drug A:</label>
+        <input list="drugs" name="drug_a" id="drug_a" placeholder="Please select Drug A" required>
+
+        <label for="drug_b">Drug B:</label>
+        <input list="drugs" name="drug_b" id="drug_b" placeholder="Please select Drug B" required>
+
+        <datalist id="drugs">
+          {{ drug_options | safe }}
+        </datalist>
+
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender" required>
+          <option value="" disabled selected>Please select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" value="30" min="1" max="120" required>
+
+        <label for="diabetes">Diabetes:</label>
+        <select name="diabetes" id="diabetes" required>
+          <option value="" disabled selected>Please select</option>
+          <option value="No">No</option>
+          <option value="Yes">Yes</option>
+        </select>
+
+        <button type="submit">Check Interaction</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

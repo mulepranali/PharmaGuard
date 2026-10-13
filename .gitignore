@@ -1,0 +1,24 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Large datasets and model weights (>100 MB, cannot be pushed to standard GitHub)
+*.pkl
+*.xlsx
+*.csv
+reports/
+uploads/
+results/
+
+# Editor / IDE configuration
+.vscode/
+.idea/
+*.swp

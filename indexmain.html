@@ -1,0 +1,263 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PharmaGuard - Drug Interaction Checker</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>PharmaGuard Drug Interaction</h1>
+        <form action="/result" method="post">
+            <label for="drug_a">Drug A:</label>
+            <input list="drug-list" name="drug_a" required>
+            <datalist id="drug-list">
+            {{ drug_options }}
+            </datalist>
+
+            <label for="drug_b">Drug B:</label>
+            <input list="drug-list" name="drug_b" required>
+
+
+            
+
+            <label for="gender">Gender:</label>
+            <select name="gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" value="30" required>
+
+            <label for="diabetes">Diabetes:</label>
+            <select name="diabetes">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
+
+            <button type="submit">Check Interaction</button>
+        </form>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PharmaGuard - Drug Interaction Checker</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PharmaGuard - Drug Interaction Checker</h1>
+        <form action="/result" method="POST">
+            <label for="drug_a">Drug A:</label>
+            <input list="drugs" name="drug_a" required>
+
+            <label for="drug_b">Drug B:</label>
+            <input list="drugs" name="drug_b" required>
+
+            <label for="gender">Gender:</label>
+            <select name="gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
+            <label for="age">Age:</label>
+            <input type="number" name="age" value="30" required>
+
+            <label for="diabetes">Diabetes:</label>
+            <select name="diabetes">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
+
+            <datalist id="drugs">
+                {{ drug_options }}
+            </datalist>
+
+            <br><br>
+            <input type="submit" value="Check Interaction">
+        </form>
+    </div>
+</body>
+</html>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PharmaGuard | Visualize</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+    }
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: #222;
+      padding: 20px;
+    }
+    .navbar img {
+      margin-right: auto;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .navbar a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-bottom: 2px solid transparent;
+    }
+    .navbar a.active, .navbar a:hover {
+      border-bottom: 2px solid white;
+    }
+    .form-box {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    .form-box h2 {
+      text-align: center;
+      color: #333;
+    }
+    .form-box label {
+      display: block;
+      margin-top: 15px;
+      color: #444;
+    }
+    .form-box input, .form-box select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .form-box button {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+    .form-box button:hover {
+      background-color: #0097a7;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="https://thumbs.dreamstime.com/b/quantum-computing-drug-discovery-quantum-computing-drug-discovery-generative-ai-generative-ai-329675973.jpg" alt="Logo">
+    <a href="/intro">Home</a>
+    <a href="/index" class="active">Visualize</a>
+    <a href="/bookmarks">Bookmarks</a>
+    <a href="#faq">FAQ</a>
+  </div>
+
+  <div class="form-box">
+    <h2>Check Drug Interaction</h2>
+    <form action="/result" method="POST">
+      <label for="drug_a">Drug A:</label>
+      <input list="drugs" name="drug_a" required>
+
+      <label for="drug_b">Drug B:</label>
+      <input list="drugs" name="drug_b" required>
+
+      <datalist id="drugs">
+        {{ drug_options }} <!-- Injected by Flask -->
+      </datalist>
+
+      <label for="gender">Gender:</label>
+      <select name="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <label for="age">Age:</label>
+      <input type="number" name="age" value="30">
+
+      <label for="diabetes">Diabetes:</label>
+      <select name="diabetes">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <button type="submit">Check Interaction</button>
+    </form>
+  </div>
+</body>
+</html> 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PharmaGuard | Visualize</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body> 
+  <!-- ✅ Navigation Bar -->
+  <div class="navbar">
+    <img src="logo.png" alt="Logo">
+    <a href="/intro">Home</a>
+    <a href="/index" class="active">Visualize</a>
+    <a href="/bookmarks">Bookmarks</a>
+    <a href="#faq">FAQ</a>
+  </div>
+
+  <!-- ✅ Form Section -->
+  <div class="form-box">
+    <h2>Check Drug Interaction</h2>
+    <form action="/result" method="POST">
+      <!-- Drug A -->
+      <label for="drug_a">Drug A:</label>
+      <input list="drugs" name="drug_a" id="drug_a" required>
+
+      <!-- Drug B -->
+      <label for="drug_b">Drug B:</label>
+      <input list="drugs" name="drug_b" id="drug_b" required>
+
+      <!-- ✅ Injected options from Flask -->
+      <datalist id="drugs">
+        {{ drug_options | safe }}
+      </datalist>
+
+      <!-- Gender -->
+      <label for="gender">Gender:</label>
+      <select name="gender" id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <!-- Age -->
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="age" value="30" min="0" max="120" required>
+
+      <!-- Diabetes -->
+      <label for="diabetes">Diabetes:</label>
+      <select name="diabetes" id="diabetes">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+
+      <button type="submit">Check Interaction</button>
+    </form>
+  </div>
+</body>
+</html>  
+

@@ -1,0 +1,17 @@
+body {
+  font-family: Arial;
+  padding: 30px;
+  background: #f8f8f8;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.result {
+  background: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}

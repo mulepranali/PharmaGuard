@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PharmaGuard - AI Drug Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: url('https://t4.ftcdn.net/jpg/10/27/40/71/360_F_1027407115_f9OsOMcgehl82FKwpNCgCBROJqmDyX3M.jpg') no-repeat center center fixed;
+            /* background: url('background.jpg') no-repeat center center fixed; */
+
+            background-size: cover;
+        }
+
+        .overlay {
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5); 
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar img {
+        width: 45px;
+        height: 45px;
+        margin-right: 10px;
+        object-fit: cover;          /* Zooms in/crops the image */
+        border-radius: 8px;         /* Slightly rounded instead of full circle */
+        background-color: transparent;
+    }
+
+
+        .navbar h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-left: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .center-content {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .center-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .center-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .get-started-btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+            background-color: #1dd1a1;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn {
+        background: linear-gradient(to right, #3f87a6, #ebf8e1);
+        padding: 12px 24px;
+        color: #000;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: background 0.3s ease;
+        font-size: 16px;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .btn:hover {
+        background: linear-gradient(to right, #4da3c2, #d0f0c0);
+      }
+
+
+        .get-started-btn:hover {
+            background: linear-gradient(to right, #4da3c2, #d0f0c0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <!-- 🔝 Navigation -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://media.istockphoto.com/id/1077130198/vector/cross-or-plus-with-letter-o-logo-icon-design.jpg?s=612x612&w=0&k=20&c=7zl7Fddbrh3s9t697b7wYcJTtgGOyHAY--uE8yxjHdc=" alt="Logo">
+            <h1>PharmaGuard</h1>
+        </div>
+        <div class="nav-links">
+    <a href="{{ url_for('intro') }}">Home</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('index') }}">Visualize</a>
+    <a href="{{ url_for('visualize') }}">Drug Bookmarks</a>
+    <a href="#faq">FAQ</a>
+</div>
+
+    </div>
+
+    <!-- ✨ Centered Hero Text -->
+    <div class="center-content">
+        <h2>Smart Drug Interaction Checker</h2>
+        <p>Explore side effects, drug combinations, and insights with AI.</p>
+        <!-- <a href="/"><button class="get-started-btn">Get Started</button></a> -->
+        <a href="/index" class="btn">Get Started</a>
+
+
+    </div>
+
+</body>
+</html>

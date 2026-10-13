@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About PharmaGuard</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://t4.ftcdn.net/jpg/10/27/40/71/360_F_1027407115_f9OsOMcgehl82FKwpNCgCBROJqmDyX3M.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Dark Overlay */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      margin-right: 12px;
+      border-radius: 10px;
+    }
+
+    .logo h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #ffffff;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Container */
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      min-height: calc(100vh - 80px);
+    }
+
+    /* Glassmorphic About Box */
+    .about-box {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 50px 40px;
+      border-radius: 20px;
+      width: 75%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 1.5s ease;
+    }
+
+    .about-box h1 {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .about-box p, .about-box li {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      color: #f0f0f0;
+    }
+
+    .about-box ul {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+
+    .about-box li::marker {
+      color: #00ffcc;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-box {
+        width: 95%;
+        padding: 30px 20px;
+      }
+
+      .about-box h1 {
+        font-size: 28px;
+      }
+
+      .about-box p, .about-box li {
+        font-size: 16px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Dark Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="https://media.istockphoto.com/id/1077130198/vector/cross-or-plus-with-letter-o-logo-icon-design.jpg?s=612x612&w=0&k=20&c=7zl7Fddbrh3s9t697b7wYcJTtgGOyHAY--uE8yxjHdc=" alt="Logo">
+        <h1>PharmaGuard</h1>
+      </div>
+      <div class="nav-links">
+        <a href="{{ url_for('intro') }}">Home</a>
+        <a href="{{ url_for('about') }}" class="active">About</a>
+        <a href="{{ url_for('index') }}">Visualize</a>
+        <a href="{{ url_for('visualize') }}">Drug Bookmarks</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+
+    <!-- About Content -->
+    <div class="container">
+      <div class="about-box">
+        <h1>About PharmaGuard</h1>
+        <p>
+          In today’s healthcare systems, patients are often prescribed multiple medications to treat complex or coexisting medical conditions. While essential for managing health, this multi-drug approach significantly increases the risk of <strong>Drug-to-Drug Interactions (DDIs)</strong> and unwanted side effects.
+        </p>
+        <p>
+          These interactions can reduce drug efficacy, cause allergic responses, or lead to severe, even life-threatening complications. Without proper tools, healthcare providers and patients face challenges in identifying these risks in real-time.
+        </p>
+        <p><strong>PharmaGuard</strong> solves this problem with an AI-powered platform that allows users to input drugs and receive immediate insights about:</p>
+        <ul>
+          <li>Potential drug-to-drug interactions</li>
+          <li>Associated side effects with severity levels</li>
+          <li>Relevant clinical insights for safe usage</li>
+        </ul>
+        <p>
+          Whether used in clinics or at home, PharmaGuard helps reduce medication risks and ensures confident, informed health decisions.
+          Our goal is to support informed decision-making, reduce avoidable medication errors, and promote patient safety.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
